@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Distrimascotas</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- TARJETA IZQUIERDA -->
+        <div class="card logo-card">
+            <h1 class="logo-text">Distrimascotas</h1>
+            <img src="imagenes/logo-distrimascotas.png" class="logo-img">
+        </div>
+
+        <!-- TARJETA DERECHA -->
+        <div class="card login-card">
+
+            <div class="avatar">
+                <img src="imagenes/avatar-user.png">
+            </div>
+
+            <label>Usuario</label>
+            <input type="text" id="usuario">
+
+            <label>Contraseña</label>
+            <input type="password" id="password">
+
+            <button class="btn-principal" onclick="login()">Iniciar</button>
+
+            <p class="link" onclick="abrirOlvido()">¿Olvidó su contraseña?</p>
+            <p class="link" onclick="abrirRegistro()">Registrarse</p>
+        </div>
+
+    </div>
+
+    <!-- ERROR LOGIN -->
+    <div id="modalError" class="modal hidden">
+        <div class="modal-content exito">
+            <p>Credenciales incorrectas<br>Intente nuevamente</p>
+            <button class="btn-principal" onclick="cerrarModal()">Regresar</button>
+        </div>
+    </div>
+
+    <!-- REGISTRO -->
+    <div id="modalRegistro" class="modal hidden">
+        <div class="modal-content registro">
+            <h3>Registrarse</h3>
+
+            <label>Nombre:</label>
+            <input type="text" id="regNombre">
+
+            <label>Correo:</label>
+            <input type="email" id="regCorreo">
+
+            <label>Contraseña:</label>
+            <input type="password" id="regPassword">
+
+            <button class="btn-principal" onclick="registrarUsuario()">Continuar</button>
+        </div>
+    </div>
+
+    <!-- REGISTRO EXITOSO -->
+    <div id="modalRegistroExito" class="modal hidden">
+        <div class="modal-content exito">
+            <p>
+                ¡Registro exitoso!<br>
+                Tu cuenta ha sido creada correctamente.<br>
+                Ahora puedes iniciar sesión.
+            </p>
+            <button class="btn-principal" onclick="cerrarRegistroExito()">Iniciar</button>
+        </div>
+    </div>
+
+    <!-- OLVIDÓ CONTRASEÑA -->
+    <div id="modalOlvido" class="modal hidden">
+        <div class="modal-content registro">
+            <h3>Recordar Contraseña</h3>
+
+            <label>Correo:</label>
+            <input type="email" id="correoOlvido">
+
+            <button class="btn-principal" onclick="enviarRecuperacion()">Enviar</button>
+        </div>
+    </div>
+
+    <!-- CONFIRMACIÓN -->
+    <div id="modalConfirmacion" class="modal hidden">
+        <div class="modal-content exito">
+            <p>
+                Te enviaremos un enlace para<br>
+                restablecer tu contraseña.
+            </p>
+            <button class="btn-principal" onclick="cerrarConfirmacion()">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

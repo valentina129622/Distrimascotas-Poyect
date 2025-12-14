@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Inventario | Distrimascotas</title>
+
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/inventario.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-text">Distrimascotas</span>
+      <span class="logo-paw">🐾</span>
+    </div>
+
+    <nav class="menu">
+      <a href="home.html">Home</a>
+      <a href="ventas.html">Ventas y Fidelización</a>
+      <a href="reportes.html">Reportes</a>
+      <a class="active">Inventario</a>
+    </nav>
+
+    <div class="user-area">
+      <span>User</span>
+      <div class="user-icon">👤</div>
+      <div class="logout" onclick="cerrarSesion()">
+        <img src="imagenes/icons/logout.png" alt="Cerrar sesión">
+      </div>
+
+    </div>
+  </header>
+
+  <section class="banner">
+    <img src="imagenes/banner-animales.png">
+  </section>
+
+  <main class="inventario-container">
+
+    <!-- KPIs -->
+    <section class="kpis">
+      <div class="kpi">Productos en inventario<br><strong id="totalProductos">0</strong></div>
+      <div class="kpi">Bajo stock<br><strong id="bajoStock">0</strong></div>
+      <div class="kpi">Valor inventario<br><strong id="valorInventario">$0</strong></div>
+    </section>
+
+    <!-- BUSCADOR -->
+    <div class="acciones">
+      <input type="text" placeholder="Buscar Producto..." onkeyup="buscarProducto(this.value)">
+      <button onclick="abrirModalAgregar()">Agregar Producto +</button>
+    </div>
+
+    <!-- TABLA -->
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Producto</th>
+          <th>Categoría</th>
+          <th>Stock</th>
+          <th>Precio</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaProductos"></tbody>
+    </table>
+
+  </main>
+
+  <!-- MODAL PRODUCTO -->
+  <div class="modal" id="modalProducto">
+    <div class="modal-content">
+      <h3 id="tituloModal">Agregar producto</h3>
+
+      <input id="producto" placeholder="Producto">
+      <input id="categoria" placeholder="Categoría">
+      <input id="stock" type="number" placeholder="Stock">
+      <input id="precio" type="number" placeholder="Precio">
+      <input type="file" id="imagen" accept="image/*">
+
+      <button onclick="guardarProducto()">Guardar</button>
+      <button class="cancelar" onclick="cerrarModal()">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- MODAL ALERTA -->
+  <div class="modal" id="modalAlerta">
+    <div class="modal-content">
+      <p id="textoAlerta"></p>
+      <button onclick="cerrarAlerta()">Continuar</button>
+    </div>
+  </div>
+
+  <script src="js/inventario.js"></script>
+</body>
+
+</html>

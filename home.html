@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Distrimascotas</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-text">Distrimascotas</span>
+            <span class="logo-paw">🐾</span>
+        </div>
+
+        <nav class="menu">
+            <a class="active">Home</a>
+            <a onclick="irVentas()" class="link">Ventas y Fidelización</a>
+            <a onclick="irReportes()" class="link">Reportes</a>
+            <a onclick="irInventario()" class="link">Inventario</a>
+        </nav>
+
+
+
+        <div class="user-area">
+            <span>User</span>
+            <div class="user-icon">👤</div>
+            <!-- FLECHA SALIR -->
+            <div class="logout" onclick="cerrarSesion()">
+                <img src="imagenes/icons/logout.png" alt="Cerrar sesión">
+            </div>
+
+        </div>
+    </header>
+
+    <!-- IMAGEN SUPERIOR (UNA SOLA) -->
+    <section class="banner">
+        <img src="imagenes/banner-animales.png" alt="Mascotas">
+    </section>
+
+    <!-- CONTENIDO -->
+    <main class="home-container">
+
+        <h2 class="titulo">Catalogo disponible general!</h2>
+
+        <!-- BUSCADOR -->
+        <div class="search-box">
+            <input type="text" id="buscarProducto" placeholder="Buscar Producto....." onkeyup="buscarProducto()">
+        </div>
+
+        <!-- GRID PRODUCTOS -->
+        <div class="productos" id="listaProductos"></div>
+
+    </main>
+
+    <script src="js/home.js"></script>
+    <script>
+        function irVentas() {
+            window.location.href = "ventas.html";
+        }
+        function irReportes() {
+            window.location.href = "reportes.html";
+        }
+        function irInventario() {
+            window.location.href = "inventario.html";
+        }
+    </script>
+</body>
+
+</html>

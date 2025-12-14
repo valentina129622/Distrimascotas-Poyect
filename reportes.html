@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes | Distrimascotas</title>
+
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/reportes.css">
+</head>
+
+<script src="js/reportes.js"></script>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-text">Distrimascotas</span>
+      <span class="logo-paw">🐾</span>
+    </div>
+
+    <nav class="menu">
+      <a onclick="location.href='home.html'">Home</a>
+      <a onclick="location.href='ventas.html'">Ventas y Fidelización</a>
+      <a class="active">Reportes</a>
+      <a onclick="location.href='inventario.html'">Inventario</a>
+    </nav>
+
+    <div class="user-area">
+      <span>User</span>
+      <div class="user-icon">👤</div>
+      <div class="logout" onclick="cerrarSesion()">
+        <img src="imagenes/icons/logout.png" alt="Cerrar sesión">
+      </div>
+
+    </div>
+  </header>
+
+  <section class="banner">
+    <img src="imagenes/banner-animales.png">
+  </section>
+
+  <main class="reportes-container">
+
+    <!-- KPIs -->
+    <section class="kpis">
+      <div class="kpi">💰<p>Ventas del mes</p><strong>$1.700.000</strong></div>
+      <div class="kpi">⭐<p>Puntos de fidelidad</p><strong>2700 pts</strong></div>
+      <div class="kpi">📦<p>Bajo Stock</p><strong>3 ítems</strong></div>
+    </section>
+
+    <!-- GRAFICA + REPORTE -->
+    <section class="bloque-doble">
+
+      <!-- GRAFICA -->
+      <div class="grafica">
+        <h3>Ventas por Semana</h3>
+
+        <div class="barra">
+          <span>Semana 4</span>
+          <div class="barra-fondo">
+            <div class="barra-valor w100"></div>
+          </div>
+        </div>
+
+        <div class="barra">
+          <span>Semana 3</span>
+          <div class="barra-fondo">
+            <div class="barra-valor w75"></div>
+          </div>
+        </div>
+
+        <div class="barra">
+          <span>Semana 2</span>
+          <div class="barra-fondo">
+            <div class="barra-valor w50"></div>
+          </div>
+        </div>
+
+        <div class="barra">
+          <span>Semana 1</span>
+          <div class="barra-fondo">
+            <div class="barra-valor w30"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORTE VENTAS -->
+      <div class="reporte">
+        <h3>Reporte de Ventas</h3>
+        <table>
+          <tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Total</th>
+            <th>Método</th>
+          </tr>
+          <tr>
+            <td>03/02/25</td>
+            <td>Sofía</td>
+            <td>$50.000</td>
+            <td>Efectivo</td>
+          </tr>
+          <tr>
+            <td>03/02/25</td>
+            <td>Carlos</td>
+            <td>$30.000</td>
+            <td>Tarjeta</td>
+          </tr>
+          <tr>
+            <td>04/02/25</td>
+            <td>Kevin</td>
+            <td>$28.000</td>
+            <td>Nequi</td>
+          </tr>
+        </table>
+
+        <div class="acciones">
+          <button>PDF</button>
+          <button>EXCEL</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- REPORTE FIDELIZACION -->
+    <section class="reporte fidelizacion">
+      <h3>Reporte de Fidelización</h3>
+
+      <table>
+        <tr>
+          <th>Cliente</th>
+          <th>Puntos</th>
+          <th>Nivel</th>
+          <th>Último</th>
+        </tr>
+        <tr>
+          <td>Sofía</td>
+          <td>1200</td>
+          <td>Gold</td>
+          <td>01/02</td>
+        </tr>
+        <tr>
+          <td>Carlos</td>
+          <td>800</td>
+          <td>Silver</td>
+          <td>30/01</td>
+        </tr>
+        <tr>
+          <td>Kevin</td>
+          <td>600</td>
+          <td>Bronze</td>
+          <td>28/01</td>
+        </tr>
+      </table>
+
+      <div class="acciones">
+        <button>PDF</button>
+        <button>EXCEL</button>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

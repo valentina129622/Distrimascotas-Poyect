@@ -1,0 +1,143 @@
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #8ccccc;
+  border-radius: 0 0 20px 20px;
+
+  position: relative;
+  z-index: 10; /* MUY IMPORTANTE */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-family: 'Shalimar', cursive;
+  font-size: 50px;   /* MÁS GRANDE */
+}
+
+.menu a {
+  margin: 0 18px;
+  cursor: pointer;
+  font-family: 'Shalimar', cursive; /* FUENTE FIGMA */
+  font-size: 50px;                 /* MÁS VISIBLE */
+}
+
+.menu .active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-icon {
+  background: #7abbbb;
+  padding: 6px 10px;
+  border-radius: 50%;
+}
+
+.logout {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* BANNER */
+.banner {
+  display: flex;
+  justify-content: center;
+  margin: -60px 0 -110px 0; /* SUBE MUCHO MÁS LA IMAGEN */
+  position: relative;
+  z-index: 3;
+}
+
+.banner img {
+  width: 90%;
+  max-width: 1100px;
+  transform: translateY(-33px); /* SUBE LA IMAGEN REALMENTE */
+  position: relative;
+  z-index: 5;
+}
+
+/* CONTENIDO */
+.home-container {
+  background: #7abbbb;
+  margin: -110px 30px 30px; /* SUBE MÁS EL CUADRO */
+  padding: 45px 30px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.titulo {
+  text-align: center;
+  font-family: 'Shalimar', cursive;
+  font-size: 50px;        /* MÁS GRANDE */
+  margin-bottom: 25px;
+  letter-spacing: 1px;   /* MÁS ELEGANTE */
+}
+
+/* BUSCADOR */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-box input {
+  width: 60%;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+}
+
+/* PRODUCTOS */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+}
+
+.producto {
+  background: #8ccccc;
+  padding: 25px 20px;  /* MÁS ESPACIO ARRIBA */
+  border-radius: 25px;
+  text-align: center;
+}
+
+.producto img {
+  width: 130px;        /* MÁS GRANDE */
+  max-height: 120px;  /* CONTROLAMOS ALTURA */
+  object-fit: contain;
+}
+
+.producto p {
+  margin-top: 12px;
+  font-family: 'Shalimar', cursive;
+  font-size: 40px;   /* MÁS GRANDE */
+  line-height: 1.3; /* Mejor lectura */
+}
+
+.menu .link {
+  cursor: pointer;
+}
+
+.menu .link:hover {
+  text-decoration: underline;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+
+

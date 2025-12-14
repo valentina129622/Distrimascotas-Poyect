@@ -1,0 +1,110 @@
+.ventas-container {
+  background: #7abbbb;
+  margin: -110px 30px 30px;
+  padding: 40px;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+.formulario {
+  background: #6faeae;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.formulario h3 {
+  font-family: 'Shalimar', cursive;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.formulario label {
+  display: block;
+  margin-top: 10px;
+}
+
+.formulario input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+.formulario button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  background: #0f6f6f;
+  color: white;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background: #19a3a3;
+}
+
+.tablas {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.tabla {
+  background: #8ccccc;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.tabla h3 {
+  text-align: center;
+  font-family: 'Shalimar', cursive;
+  font-size: 40px;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 6px;
+  text-align: center;
+  border-bottom: 1px solid #4f8f8f;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: linear-gradient(#4feeee, #1aa);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border: none;
+  background: #0f6f6f;
+  color: white;
+}
+
+.modal-content button:hover {
+  background: #4feeee;   /* verde claro del figma */
+  color: #004f4f;        /* texto más oscuro */
+}
+

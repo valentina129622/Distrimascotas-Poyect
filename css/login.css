@@ -1,0 +1,118 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 60px;
+}
+
+/* TARJETAS */
+.card {
+  background: linear-gradient(#bfe5e5, #2f8f8f);
+  border-radius: 35px;
+  padding: 40px;
+  width: 360px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+/* LOGO */
+.logo-img {
+  width: 360px;
+}
+
+.logo-text {
+  font-family: 'Shalimar', cursive;
+  font-size: 54px;
+  margin-top: 10px;
+}
+
+/* LOGIN */
+.login-card label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 6px;
+}
+
+/* AVATAR */
+.avatar img {
+  width: 130px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+/* BOTÓN PRINCIPAL */
+.btn-principal {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: #0b5f5f;
+  color: black;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* EFECTO HOVER (FIGMA) */
+.btn-principal:hover {
+  background: #4ef0f0; /* verde claro */
+}
+
+/* LINKS */
+.link {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* MODALES */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  border-radius: 35px;
+  padding: 30px;
+  width: 360px;
+  text-align: center;
+}
+
+.modal-content.registro,
+.modal-content.exito {
+  background: linear-gradient(#4ef0f0, #1ca5a5);
+}
+
+.modal-content label {
+  display: block;
+  text-align: left;
+  margin-top: 12px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 6px;
+}
+
+.hidden {
+  display: none;
+}

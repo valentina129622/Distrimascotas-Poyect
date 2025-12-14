@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ventas y Fidelización | Distrimascotas</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/ventas.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-text">Distrimascotas</span>
+            <span class="logo-paw">🐾</span>
+        </div>
+
+        <nav class="menu">
+            <a onclick="irHome()">Home</a>
+            <a class="active">Ventas y Fidelización</a>
+            <a onclick="irReportes()">Reportes</a>
+            <a onclick="irInventario()">Inventario</a>
+        </nav>
+
+        <div class="user-area">
+            <span>User</span>
+            <div class="user-icon">👤</div>
+            <div class="logout" onclick="cerrarSesion()">
+                <img src="imagenes/icons/logout.png" alt="Cerrar sesión">
+            </div>
+
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="banner">
+        <img src="imagenes/banner-animales.png">
+    </section>
+
+    <!-- CONTENIDO -->
+    <main class="ventas-container">
+
+        <!-- FORMULARIO -->
+        <section class="formulario">
+            <h3>Registrar cliente o venta</h3>
+
+            <label>Nombre del cliente:</label>
+            <input id="nombre">
+
+            <label>Nombre de la tienda:</label>
+            <input id="tienda">
+
+            <label>Identificación:</label>
+            <input id="identificacion">
+
+            <label>Teléfono:</label>
+            <input id="telefono">
+
+            <label>Correo:</label>
+            <input id="correo">
+
+            <button onclick="registrarCliente()">Registrar Cliente</button>
+            <button onclick="registrarVenta()">Registrar Venta</button>
+        </section>
+
+        <!-- TABLAS -->
+        <section class="tablas">
+
+            <div class="tabla">
+                <h3>Clientes</h3>
+                <table id="tablaClientes">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tienda</th>
+                        <th>Contacto</th>
+                        <th>Correo</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tabla">
+                <h3>Ventas</h3>
+                <table id="tablaVentas">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tienda</th>
+                        <th>Ventas</th>
+                        <th>Fidelidad</th>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p id="modalTexto"></p>
+            <button onclick="cerrarModal()">Continuar</button>
+        </div>
+    </div>
+
+    <script src="js/ventas.js"></script>
+    <script>
+        function irHome() {
+            window.location.href = "home.html";
+        }
+
+        function irReportes() {
+            window.location.href = "reportes.html";
+        }
+        function irInventario() {
+            window.location.href = "inventario.html";
+        }
+    </script>
+</body>
+
+</html>
