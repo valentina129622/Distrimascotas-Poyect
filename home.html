@@ -19,10 +19,10 @@
         </div>
 
         <nav class="menu">
-            <a class="active">Home</a>
-            <a onclick="irVentas()" class="link">Ventas y Fidelización</a>
-            <a onclick="irReportes()" class="link">Reportes</a>
-            <a onclick="irInventario()" class="link">Inventario</a>
+            <a class="active">Inicio</a>
+            <a onclick="irClientes()">Clientes</a>
+            <a onclick="irVentas()" class="link">Ventas</a>
+            <a onclick="irInventario()" class="link">Gestión de Productos</a>
         </nav>
 
 
@@ -60,15 +60,17 @@
 
     <script src="js/home.js"></script>
     <script>
-        function irVentas() {
-            window.location.href = "ventas.html";
-        }
-        function irReportes() {
-            window.location.href = "reportes.html";
-        }
-        function irInventario() {
-            window.location.href = "inventario.html";
-        }
+        function irClientes() {
+        window.location.href = "clientes.html";
+    }
+
+    function irVentas() {
+        window.location.href = "ventas.html";
+    }
+
+    function irInventario() {
+        window.location.href = "inventario.html";
+    }
     </script>
 </body>
 

@@ -1,163 +1,116 @@
-/* =========================
-   VENTAS Y FIDELIZACIÓN
-   DISTRIMASCOTAS
-========================= */
-
-// MODELO DE DATOS UNIFICADO
-// clientes = {
-//   "Kevin": {
-//     tienda: "Paticas Spa",
-//     telefono: "311...",
-//     correo: "kevin@gmail.com",
-//     ventas: 2
-//   }
-// }
-
 let clientes = JSON.parse(localStorage.getItem("clientes")) || {};
-
-/* =========================
-   REGISTRAR CLIENTE
-========================= */
-function registrarCliente() {
-  const nombre = document.getElementById("nombre").value.trim();
-  const tienda = document.getElementById("tienda").value.trim();
-  const telefono = document.getElementById("telefono").value.trim();
-  const correo = document.getElementById("correo").value.trim();
-
-  if (!nombre || !tienda || !telefono || !correo) {
-    alert("Completa todos los campos del cliente");
-    return;
-  }
-
-  if (clientes[nombre]) {
-    alert("El cliente ya existe");
-    return;
-  }
-
-  clientes[nombre] = {
-    tienda,
-    telefono,
-    correo,
-    ventas: 0
-  };
-
-  localStorage.setItem("clientes", JSON.stringify(clientes));
-
-  actualizarTablaClientes();
-  actualizarTablaVentas();
-  mostrarModal("Cliente registrado exitosamente");
-  limpiarFormulario();
-}
 
 /* =========================
    REGISTRAR VENTA
 ========================= */
 function registrarVenta() {
-  const nombre = document.getElementById("nombre").value.trim();
 
-  if (!clientes[nombre]) {
-    alert("Primero debes registrar el cliente");
-    return;
-  }
+    const nombre =
+        document.getElementById("nombre").value.trim();
 
-  clientes[nombre].ventas++;
+    if (!clientes[nombre]) {
 
-  localStorage.setItem("clientes", JSON.stringify(clientes));
+        alert(
+            "El cliente no existe. Debe registrarlo primero."
+        );
 
-  actualizarTablaVentas();
-  mostrarModal("Venta registrada exitosamente");
-}
+        return;
+    }
 
-/* =========================
-   TABLA CLIENTES
-========================= */
-function actualizarTablaClientes() {
-  const tabla = document.getElementById("tablaClientes");
+    clientes[nombre].ventas++;
 
-  tabla.innerHTML = `
-    <tr>
-      <th>Nombre</th>
-      <th>Tienda</th>
-      <th>Contacto</th>
-      <th>Correo</th>
-    </tr>
-  `;
+    localStorage.setItem(
+        "clientes",
+        JSON.stringify(clientes)
+    );
 
-  for (const nombre in clientes) {
-    const c = clientes[nombre];
-    const fila = tabla.insertRow();
-    fila.innerHTML = `
-      <td>${nombre}</td>
-      <td>${c.tienda}</td>
-      <td>${c.telefono}</td>
-      <td>${c.correo}</td>
-    `;
-  }
+    actualizarTablaVentas();
+
+    mostrarModal(
+        "Venta registrada exitosamente"
+    );
+
+    document.getElementById("nombre").value = "";
 }
 
 /* =========================
    TABLA VENTAS
 ========================= */
 function actualizarTablaVentas() {
-  const tabla = document.getElementById("tablaVentas");
 
-  tabla.innerHTML = `
-    <tr>
-      <th>Nombre</th>
-      <th>Tienda</th>
-      <th>Ventas</th>
-      <th>Fidelidad</th>
-    </tr>
-  `;
+    const tabla =
+        document.getElementById("tablaVentas");
 
-  for (const nombre in clientes) {
-    const c = clientes[nombre];
-    const estrellas = "⭐".repeat(Math.min(c.ventas, 5));
-
-    const fila = tabla.insertRow();
-    fila.innerHTML = `
-      <td>${nombre}</td>
-      <td>${c.tienda}</td>
-      <td>${c.ventas}</td>
-      <td>${estrellas}</td>
+    tabla.innerHTML = `
+        <tr>
+            <th>Cliente</th>
+            <th>Tienda</th>
+            <th>Ventas</th>
+            <th>Nivel Fidelización</th>
+        </tr>
     `;
-  }
-}
 
-/* =========================
-   LIMPIAR FORMULARIO
-========================= */
-function limpiarFormulario() {
-  document.getElementById("nombre").value = "";
-  document.getElementById("tienda").value = "";
-  document.getElementById("identificacion").value = "";
-  document.getElementById("telefono").value = "";
-  document.getElementById("correo").value = "";
+    for (const nombre in clientes) {
+
+        const c = clientes[nombre];
+
+        let nivel = "Bronce";
+
+        if (c.ventas >= 5) {
+            nivel = "Plata";
+        }
+
+        if (c.ventas >= 10) {
+            nivel = "Oro";
+        }
+
+        const fila = tabla.insertRow();
+
+        fila.innerHTML = `
+            <td>${nombre}</td>
+            <td>${c.tienda}</td>
+            <td>${c.ventas}</td>
+            <td>${nivel}</td>
+        `;
+    }
 }
 
 /* =========================
    MODAL
 ========================= */
 function mostrarModal(texto) {
-  document.getElementById("modalTexto").innerText = texto;
-  document.getElementById("modal").style.display = "flex";
+
+    document.getElementById(
+        "modalTexto"
+    ).innerText = texto;
+
+    document.getElementById(
+        "modal"
+    ).style.display = "flex";
 }
 
 function cerrarModal() {
-  document.getElementById("modal").style.display = "none";
+
+    document.getElementById(
+        "modal"
+    ).style.display = "none";
 }
 
 /* =========================
    CERRAR SESIÓN
 ========================= */
 function cerrarSesion() {
-  window.location.href = "index.html";
+
+    window.location.href =
+        "index.html";
 }
 
 /* =========================
-   CARGA INICIAL
+   INICIO
 ========================= */
-document.addEventListener("DOMContentLoaded", () => {
-  actualizarTablaClientes();
-  actualizarTablaVentas();
-});
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+        actualizarTablaVentas();
+    }
+);

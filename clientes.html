@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ventas | Distrimascotas</title>
+    <title>Clientes y Fidelización | Distrimascotas</title>
 
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/home.css">
@@ -22,8 +22,8 @@
 
         <nav class="menu">
             <a onclick="irHome()">Inicio</a>
-            <a onclick="irClientes()">Clientes</a>
-            <a class="active">Ventas</a>
+            <a class="active">Clientes</a>
+            <a onclick="irVentas()">Ventas</a>
             <a onclick="irInventario()">Gestión de Productos</a>
         </nav>
 
@@ -35,7 +35,6 @@
             <div class="logout" onclick="cerrarSesion()">
                 <img src="imagenes/icons/logout.png" alt="Cerrar sesión">
             </div>
-
         </div>
 
     </header>
@@ -51,33 +50,50 @@
         <!-- FORMULARIO -->
         <section class="formulario">
 
-            <h3>Registrar Venta</h3>
+            <h3>Registrar Cliente</h3>
 
             <label>Nombre del cliente:</label>
             <input id="nombre">
 
-            <button onclick="registrarVenta()">
-                Registrar Venta
+            <label>Tipo de cliente:</label>
+            <select id="tipoCliente">
+                <option value="Minorista">Minorista</option>
+                <option value="Mayorista">Mayorista</option>
+            </select>
+
+            <label>Nombre de la tienda:</label>
+            <input id="tienda">
+
+            <label>Identificación / NIT:</label>
+            <input id="identificacion">
+
+            <label>Teléfono:</label>
+            <input id="telefono">
+
+            <label>Correo:</label>
+            <input id="correo">
+
+            <button onclick="registrarCliente()">
+                Registrar Cliente
             </button>
 
         </section>
 
-        <!-- TABLA DE VENTAS -->
+        <!-- TABLA CLIENTES -->
         <section class="tablas">
 
             <div class="tabla">
 
-                <h3>Historial de Ventas y Fidelización</h3>
+                <h3>Clientes Registrados</h3>
 
-                <table id="tablaVentas">
-
+                <table id="tablaClientes">
                     <tr>
-                        <th>Cliente</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
                         <th>Tienda</th>
-                        <th>Ventas</th>
-                        <th>Nivel Fidelización</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
                     </tr>
-
                 </table>
 
             </div>
@@ -102,7 +118,7 @@
     </div>
 
     <!-- JS -->
-    <script src="js/ventas.js"></script>
+    <script src="js/clientes.js"></script>
 
     <script>
 
@@ -110,8 +126,8 @@
             window.location.href = "home.html";
         }
 
-        function irClientes() {
-            window.location.href = "clientes.html";
+        function irVentas() {
+            window.location.href = "ventas.html";
         }
 
         function irInventario() {
